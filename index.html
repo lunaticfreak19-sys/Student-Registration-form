@@ -1,190 +1,136 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Registration</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="sheet">
-      <div class="letterhead">
-        <div class="mark">
-          <img
-            class="crest"
-            src="tuklogo.png"
-            alt="Technical University of Kenya logo"
-          />
-          <div class="divider"></div>
-          <div>
-            <h1>Student Records Office</h1>
-            <p>New Student Registration</p>
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="sheet">
+    <div class="letterhead">
+      <div class="mark">
+        <img class="crest" src="tuklogo.png" alt="Technical University of Kenya logo" />
+        <div class="divider"></div>
+        <div>
+          <h1>Student Records Office</h1>
+          <p>New Student Registration</p>
         </div>
-        <div class="serial" id="serialStamp">FORM REF: —</div>
       </div>
-
-      <div class="body-block" id="formView">
-        <div class="intro">
-          <h2>Register your details</h2>
-          <div class="req-note">
-            <span class="dot">*</span> marks a required field
-          </div>
-        </div>
-
-        <form id="regForm" novalidate>
-          <div class="field">
-            <label for="regNumber"
-              >Registration No.<span class="req">*</span></label
-            >
-            <div class="control">
-              <input
-                type="text"
-                id="regNumber"
-                name="regNumber"
-                placeholder="e.g. ABBQ/00001/2026"
-                autocomplete="off"
-              />
-              <span class="hint"
-                >Use the format issued on your admission letter.</span
-              >
-              <span class="err-msg" id="err-regNumber"
-                >Enter your registration number to continue.</span
-              >
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="fullName">Full Name<span class="req">*</span></label>
-            <div class="control">
-              <input
-                type="text"
-                id="fullName"
-                name="fullName"
-                placeholder="Surname first, then given names"
-                autocomplete="name"
-              />
-              <span class="err-msg" id="err-fullName"
-                >Enter your full name as it appears on your ID.</span
-              >
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="course">Course<span class="req">*</span></label>
-            <div class="control">
-              <select id="course" name="course">
-                <option value="" selected disabled>
-                  Select your programme
-                </option>
-                <option>Bachelor of Science in Computer Science</option>
-                <option>Bachelor of Science in Information Technology</option>
-                <option>Bachelor of Engineering in Civil Engineering</option>
-                <option>
-                  Bachelor of Engineering in Electrical & Electronic Engineering
-                </option>
-                <option>
-                  Bachelor of Engineering in Mechanical Engineering
-                </option>
-                <option>Bachelor of Architecture</option>
-                <option>Diploma in Building Technology</option>
-                <option>Diploma in Business Management</option>
-                <option>Other</option>
-              </select>
-              <span class="err-msg" id="err-course"
-                >Select the course you are registered for.</span
-              >
-            </div>
-          </div>
-
-          <div class="field">
-            <label>Gender<span class="req">*</span></label>
-            <div class="control">
-              <div class="gender-options">
-                <label
-                  ><input type="radio" name="gender" value="Female" />
-                  Female</label
-                >
-                <label
-                  ><input type="radio" name="gender" value="Male" /> Male</label
-                >
-                <label
-                  ><input
-                    type="radio"
-                    name="gender"
-                    value="Prefer not to say"
-                  />
-                  Prefer not to say</label
-                >
-              </div>
-              <span class="err-msg" id="err-gender">Select one option.</span>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="email">Email Address<span class="req">*</span></label>
-            <div class="control">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="you@example.com"
-                autocomplete="email"
-              />
-              <span class="hint"
-                >We will send your login confirmation here.</span
-              >
-              <span class="err-msg" id="err-email"
-                >Enter a valid email address.</span
-              >
-            </div>
-          </div>
-
-          <div class="actions">
-            <div class="fine-print">
-              By submitting, you confirm the details above match your official
-              admission records.
-            </div>
-            <button type="submit" class="submit">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.4"
-                stroke-linecap="round"
-              >
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-              Submit Registration
-            </button>
-          </div>
-        </form>
-      </div>
-
-      <div class="success-panel" id="successView">
-        <div class="stamp">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke-width="2.4"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
-        </div>
-        <h2>Registration received</h2>
-        <p>
-          Your details have been recorded. Keep your reference number for
-          enquiries.
-        </p>
-        <div class="receipt" id="receipt"></div>
-        <button type="button" class="reset-link" id="resetBtn">
-          Submit another registration
-        </button>
-      </div>
+      <div class="serial" id="serialStamp">FORM REF: —</div>
     </div>
 
-    <script src="script.js"></script>
-  </body>
+    <div class="body-block" id="formView">
+      <div class="intro">
+        <h2>Register your details</h2>
+        <div class="req-note">
+          <span class="dot">*</span> marks a required field
+        </div>
+      </div>
+
+      <form id="regForm" novalidate action="registration.php" method="POST">
+        <div class="field">
+          <label for="regNumber">Registration No.<span class="req">*</span></label>
+          <div class="control">
+            <input type="text" id="regNumber" name="regNumber" placeholder="e.g. ABBQ/00001/2026" autocomplete="off" />
+            <span class="hint">Use the format issued on your admission letter.</span>
+            <span class="err-msg" id="err-regNumber">Enter your registration number to continue.</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="fullName">Full Name<span class="req">*</span></label>
+          <div class="control">
+            <input type="text" id="fullName" name="fullName" placeholder="Surname first, then given names"
+              autocomplete="name" />
+            <span class="err-msg" id="err-fullName">Enter your full name as it appears on your ID.</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="course">Course<span class="req">*</span></label>
+          <div class="control">
+            <select id="course" name="course">
+              <option value="" selected disabled>
+                Select your programme
+              </option>
+              <option>Bachelor of Science in Computer Science</option>
+              <option>Bachelor of Science in Information Technology</option>
+              <option>Bachelor of Engineering in Civil Engineering</option>
+              <option>
+                Bachelor of Engineering in Electrical & Electronic Engineering
+              </option>
+              <option>
+                Bachelor of Engineering in Mechanical Engineering
+              </option>
+              <option>Bachelor of Architecture</option>
+              <option>Diploma in Building Technology</option>
+              <option>Diploma in Business Management</option>
+              <option>Other</option>
+            </select>
+            <span class="err-msg" id="err-course">Select the course you are registered for.</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Gender<span class="req">*</span></label>
+          <div class="control">
+            <div class="gender-options">
+              <label><input type="radio" name="gender" value="Female" />
+                Female</label>
+              <label><input type="radio" name="gender" value="Male" /> Male</label>
+              <label><input type="radio" name="gender" value="Prefer not to say" />
+                Prefer not to say</label>
+            </div>
+            <span class="err-msg" id="err-gender">Select one option.</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="email">Email Address<span class="req">*</span></label>
+          <div class="control">
+            <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+            <span class="hint">We will send your login confirmation here.</span>
+            <span class="err-msg" id="err-email">Enter a valid email address.</span>
+          </div>
+        </div>
+
+        <div class="actions">
+          <div class="fine-print">
+            By submitting, you confirm the details above match your official
+            admission records.
+          </div>
+          <button type="submit" class="submit">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+            Submit Registration
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="success-panel" id="successView">
+      <div class="stamp">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+      </div>
+      <h2>Registration received</h2>
+      <p>
+        Your details have been recorded. Keep your reference number for
+        enquiries.
+      </p>
+      <div class="receipt" id="receipt"></div>
+      <button type="button" class="reset-link" id="resetBtn">
+        Submit another registration
+      </button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
