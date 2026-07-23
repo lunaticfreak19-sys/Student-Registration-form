@@ -12,7 +12,7 @@ form.addEventListener('submit', function (e) {
   if (!validate(data)) return;
 
   // Send data to PHP backend
-  fetch('registration.php', {
+  fetch('add_students.php', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: new URLSearchParams(data)
